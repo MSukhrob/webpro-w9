@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>webpro week 9</title>
+  <meta name="description" content="Week 9 Git homework: the commands I used and what they did">
+  <title>Week 9 Git Homework | Sukhrob</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,7 +12,53 @@
     <h1>Hello Git</h1>
     <p>My name is Sukhrob.</p>
     <p>Date: 9 November 2026</p>
-    <p>This page is my Week 9 homework for the Web Programming course at Gachon University.</p>
+    <p>This page is my Week 9 homework for the Web Programming course at Gachon University. It lists the Git commands I used for the exercises E1 to E3 and what each one did.</p>
+
+    <h2>E1: first repository and first commit</h2>
+    <table>
+      <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>git clone https://github.com/MSukhrob/webpro-w9.git</code></td><td>Downloads the empty GitHub repository. It already has <code>origin</code> set, so it replaces <code>git init</code> and <code>git remote add</code>.</td></tr>
+        <tr><td><code>git checkout -b main</code></td><td>Creates and switches to the <code>main</code> branch.</td></tr>
+        <tr><td><code>git status</code></td><td>Shows that <code>index.html</code> is untracked.</td></tr>
+        <tr><td><code>git add index.html</code></td><td>Stages the file.</td></tr>
+        <tr><td><code>git commit -m "Initial commit: add index.html"</code></td><td>Saves the first snapshot.</td></tr>
+        <tr><td><code>git log --oneline</code></td><td>Shows the commit history.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>E2: branch and merge</h2>
+    <table>
+      <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>git checkout -b feature-style</code></td><td>Creates a feature branch and switches to it.</td></tr>
+        <tr><td><code>git add style.css index.html</code></td><td>Stages the new stylesheet and the link to it in the HTML.</td></tr>
+        <tr><td><code>git commit -m "Add basic stylesheet"</code></td><td>Commits the change on the feature branch.</td></tr>
+        <tr><td><code>git checkout main</code></td><td>Goes back to <code>main</code>, where <code>style.css</code> does not exist yet.</td></tr>
+        <tr><td><code>git merge --no-ff feature-style</code></td><td>Merges the branch into <code>main</code> and keeps a merge commit, so the branch stays visible in the history.</td></tr>
+        <tr><td><code>git log --oneline --graph</code></td><td>Shows the branch and the merge as a graph.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>E3: push to GitHub</h2>
+    <table>
+      <thead><tr><th scope="col">Command</th><th scope="col">What it does</th></tr></thead>
+      <tbody>
+        <tr><td><code>git push -u origin main</code></td><td>Uploads all commits to GitHub and links local <code>main</code> with <code>origin/main</code>.</td></tr>
+        <tr><td><code>git push</code></td><td>Uploads later commits, such as this page update.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What I did</h2>
+    <ol>
+      <li>Created the public repository <code>webpro-w9</code> on GitHub without a README.</li>
+      <li>Added <code>index.html</code> with my name and the date, and made the first commit.</li>
+      <li>Created the branch <code>feature-style</code>, added <code>style.css</code>, committed, and merged it into <code>main</code>.</li>
+      <li>Pushed everything to GitHub.</li>
+      <li>Enabled GitHub Pages (Settings, Pages, Deploy from branch, <code>main</code>, <code>/(root)</code>).</li>
+    </ol>
+
+    <p><a href="https://github.com/MSukhrob/webpro-w9">View the repository on GitHub</a></p>
   </main>
 </body>
 </html>
